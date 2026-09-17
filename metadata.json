@@ -1,0 +1,6 @@
+{
+  "name": "PeerBond",
+  "description": "Nền tảng kết nối học tập Peer-Matching, Mentorship và Ptree dành cho sinh viên đại học.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
