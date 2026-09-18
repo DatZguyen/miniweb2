@@ -27,10 +27,14 @@
       </p>
 <!-- Quick Action CTA Row -->
 <div class="flex flex-wrap items-center justify-center gap-space-sm pt-space-xs">
-<button class="group relative inline-flex items-center gap-space-xs px-space-lg py-3 rounded-full bg-gradient-to-r from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-md hover:shadow-lg hover:scale-[0.98] transition-all duration-200" id="btn-quick-radar">
+<a class="group relative inline-flex items-center gap-space-xs px-space-lg py-3 rounded-full bg-gradient-to-r from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-md hover:shadow-lg hover:scale-[0.98] transition-all duration-200" id="btn-quick-radar" href="matched.html">
 <span class="material-symbols-outlined text-[20px] transition-transform group-hover:rotate-45">radar</span>
 <span>⚡ Ghép đôi ngẫu nhiên (+25 Ptree XP)</span>
-</button>
+</a>
+<a class="group inline-flex items-center gap-space-xs px-space-lg py-3 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-lg text-label-lg shadow-sm hover:bg-secondary-container hover:text-on-secondary-container transition-all" id="btn-go-chat" href="matched.html?view=chat#view-chat">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+<span>💬 Trò chuyện</span>
+</a>
 <a class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-all" href="#create-goal-section">
 <span class="material-symbols-outlined text-[20px]">add_task</span>
 <span>Đăng thẻ mục tiêu của tôi</span>
@@ -836,14 +840,17 @@
         });
       });
 
-      // 3. Quick Radar Modal Logic
+      // 3. Quick Radar -> đường dẫn duy nhất đến matched.html
       const radarBtn = document.getElementById('btn-quick-radar');
       const radarModal = document.getElementById('radar-modal');
       const closeRadar = document.getElementById('close-radar-modal');
       const radarResult = document.getElementById('radar-result');
       const radarActionBtn = document.getElementById('radar-action-btn');
 
-      if (radarBtn && radarModal) {
+      // Nút "Ghép đôi ngẫu nhiên" là link duy nhất tới matched.html (không mở modal nữa)
+      if (radarBtn && radarBtn.tagName === 'A') {
+        // Giữ href="matched.html" — cho phép điều hướng mặc định, không chặn sự kiện
+      } else if (radarBtn && radarModal) {
         radarBtn.addEventListener('click', () => {
           radarModal.classList.remove('hidden');
           setTimeout(() => {
@@ -862,7 +869,9 @@
             radarActionBtn.disabled = false;
           }, 1800);
         });
+      }
 
+      if (radarModal) {
         function closeModal() {
           radarModal.classList.add('opacity-0');
           radarModal.querySelector('div').classList.add('scale-95');
@@ -871,14 +880,14 @@
           }, 300);
         }
 
-        closeRadar.addEventListener('click', closeModal);
+        if (closeRadar) closeRadar.addEventListener('click', closeModal);
         radarModal.addEventListener('click', (e) => {
           if (e.target === radarModal) closeModal();
         });
 
-        radarActionBtn.addEventListener('click', () => {
-          closeModal();
-          showToast('Ghép đôi radar thành công! Bạn & Lâm Nhật Minh vừa nhận +25 Ptree XP 🌱', 'success');
+        if (radarActionBtn) radarActionBtn.addEventListener('click', () => {
+          // Điều hướng duy nhất về trang ghép thẻ matched.html
+          window.location.href = 'matched.html';
         });
       }
 
@@ -960,6 +969,7 @@
       "information": "index.html",
       "mentors": "mentor.html",
       "peer-matching": "pmatch.html",
+      "matched": "matched.html",
       "community": "index2.html",
       "mentee-requests": "requests.html",
       "ptree": "Ptree.html",
