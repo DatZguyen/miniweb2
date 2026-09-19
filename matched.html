@@ -85,10 +85,10 @@
     .cursor-grabbing { cursor: grabbing; }
   </style>
 </head>
-<body class="font-sans text-slate-800 bg-[#f7fcf9] min-h-screen flex flex-col antialiased selection:bg-brand-200 select-none">
+<body class="font-sans text-slate-800 bg-[#f7fcf9] min-h-screen flex flex-col antialiased overflow-x-clip selection:bg-brand-200 select-none">
 <!-- BEGIN: MainNavbar -->
 <header class="w-full bg-white/95 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
-<div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
 <!-- Left: Hamburger + Brand -->
 <div class="flex items-center gap-3">
 <button id="btn-mobile-menu" type="button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobile-drawer" class="md:hidden w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-700 transition active:scale-95">
@@ -102,7 +102,7 @@
 <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
 </svg>
 </div>
-<div class="text-2xl font-bold tracking-tight">
+<div class="text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap">
 <span class="text-slate-800">Peer</span><span class="text-brand-600">Bond</span>
 </div>
 </div>
@@ -125,21 +125,21 @@
 </nav>
 <!-- Right Action Items -->
 <div class="flex items-center gap-4">
-<button aria-label="Tìm kiếm" data-path="search-header" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition" type="button" onclick="window.location.href='index2.html'">
+<button aria-label="Tìm kiếm" data-path="search-header" class="hidden min-[420px]:flex w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 items-center justify-center text-slate-600 transition" type="button" onclick="window.location.href='index2.html'">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" class="lucide lucide-search w-4 h-4"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
 </button>
 <button class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium transition" type="button" onclick="window.location.href='index.html#questionFormSection'">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="help-circle" aria-hidden="true" class="lucide lucide-help-circle w-4 h-4 text-slate-500"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
 <span class="">Đặt câu hỏi</span>
 </button>
-<button class="bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-6 py-2.5 rounded-full transition shadow-sm hover:shadow" type="button" onclick="window.location.href='login.html'">
+<button class="bg-brand-600 hover:bg-brand-700 text-white text-[13px] sm:text-sm font-medium px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition shadow-sm hover:shadow whitespace-nowrap" type="button" onclick="window.location.href='login.html'">
         Đăng nhập
       </button>
 <div class="flex items-center gap-1.5 pl-1 cursor-pointer" onclick="window.location.href='profile.html'" title="Hồ sơ cá nhân">
 <div class="w-10 h-10 rounded-full ring-2 ring-emerald-200 overflow-hidden bg-emerald-100 flex items-center justify-center">
 <img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmZaVRcmTePItBotvBdL3k5AnA6s-NHG3q6WGvPt-ySZLkIISSQ1mdqBb_hVfYeHaBu0v5ZB_lMbJ0K73FnFwYO9iXFhoVD4gn3w-Y8CGkjeHEgkx9FWlx4rIxuRDW_V1j_5g-ejS7pUwYE4wKciBjTyMcHHZVPjYhDO-VU7bQEy8xs70zTplJ18K0_PQpBoxOAG7EHXWdGIQ3zyr9chv-drHJqMcNHfnOg6J9uQnuE7hlyLC17mdi">
 </div>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down w-4 h-4 text-slate-500"><path d="m6 9 6 6 6-6"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true" class="lucide lucide-chevron-down w-4 h-4 text-slate-500 hidden sm:block"><path d="m6 9 6 6 6-6"></path></svg>
 </div>
 </div>
 </div>
@@ -211,17 +211,17 @@
 </script>
 <!-- Sub Header Mode Switcher Bar -->
 <aside aria-label="Chuyển chế độ" class="bg-emerald-50/70 border-b border-emerald-100 py-2.5">
-<div class="max-w-[1440px] mx-auto px-6 flex items-center justify-between text-xs sm:text-sm">
-<div class="flex items-center gap-2 text-emerald-800 font-medium">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 flex flex-col min-[480px]:flex-row min-[480px]:items-center gap-2 min-[480px]:justify-between text-xs sm:text-sm py-1">
+<div class="flex items-center gap-2 text-emerald-800 font-medium text-[11px] sm:text-sm">
 <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
 <span class="">Tính năng PeerMatching 2025</span>
 </div>
 <!-- Mode toggles with Notification Badge for new matches -->
-<div class="inline-flex p-1 bg-white rounded-xl shadow-xs border border-emerald-100 gap-1.5">
-<button class="px-4 py-1.5 rounded-lg font-semibold text-white bg-brand-600 transition flex items-center gap-1.5 shadow-sm" id="btn-tab-swipe" onclick="switchView('matching')">
+<div class="inline-flex p-1 bg-white rounded-xl shadow-xs border border-emerald-100 gap-1 sm:gap-1.5 self-start min-[480px]:self-auto max-w-full overflow-x-auto">
+<button class="px-3 sm:px-4 py-1.5 rounded-lg font-semibold text-white bg-brand-600 transition flex items-center gap-1.5 shadow-sm whitespace-nowrap text-xs sm:text-sm" id="btn-tab-swipe" onclick="switchView('matching')">
 <span class="">🎴 Thẻ Ghép Đôi</span>
 </button>
-<button class="relative px-4 py-1.5 rounded-lg font-medium text-slate-600 hover:text-brand-700 hover:bg-emerald-50 transition flex items-center gap-1.5" id="btn-tab-chat" onclick="switchView('chat')">
+<button class="relative px-3 sm:px-4 py-1.5 rounded-lg font-medium text-slate-600 hover:text-brand-700 hover:bg-emerald-50 transition flex items-center gap-1.5 whitespace-nowrap text-xs sm:text-sm" id="btn-tab-chat" onclick="switchView('chat')">
 <span class="">💬 Trò chuyện</span>
 <!-- Dynamic Match Badge Counter -->
 <span class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold text-white bg-rose-500 rounded-full scale-100 transition-transform shadow-xs" id="match-badge-count" style="display: inline-flex;">1</span>
@@ -259,7 +259,7 @@
 <!-- Carousel Container with Card Stacks exactly matching Photo 1 -->
 <div class="relative w-full max-w-5xl px-4 flex items-center justify-center min-h-[460px]">
 <!-- Left Carousel Arrow -->
-<button aria-label="Hồ sơ trước" class="absolute left-2 md:left-6 z-30 w-12 h-12 rounded-full bg-white/95 border border-slate-200/80 shadow-md hover:shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-600 hover:scale-105 transition active:scale-95" onclick="swipeAction('left')" title="Bỏ qua / Xem bạn khác" type="button">
+<button aria-label="Hồ sơ trước" class="absolute left-1 md:left-6 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/95 border border-slate-200/80 shadow-md hover:shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-600 hover:scale-105 transition active:scale-95" onclick="swipeAction('left')" title="Bỏ qua / Xem bạn khác" type="button">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-left" aria-hidden="true" class="lucide lucide-chevron-left w-6 h-6"><path d="m15 18-6-6 6-6"></path></svg>
 </button>
 <!-- Cards Deck Area -->
@@ -273,7 +273,7 @@
 <div class="h-3 bg-slate-100 rounded w-1/2"></div>
 </div>
 <!-- Left Card: "Chưa cùng tần số lúc này" (Skip state card with X button) -->
-<div class="relative z-10 w-64 md:w-72 h-[380px] rounded-3xl bg-[#caeedc]/85 border border-[#a4e3c1] shadow-soft p-6 flex flex-col items-center justify-center text-center transform -translate-x-12 md:-translate-x-16 hover:-translate-x-14 transition duration-300 backdrop-blur-xs select-none cursor-pointer" onclick="swipeAction('left')">
+<div class="relative z-10 w-64 md:w-72 h-[380px] rounded-3xl bg-[#caeedc]/85 border border-[#a4e3c1] shadow-soft p-6 hidden md:flex flex-col items-center justify-center text-center transform md:-translate-x-16 hover:-translate-x-14 transition duration-300 backdrop-blur-xs select-none cursor-pointer" onclick="swipeAction('left')">
 <button class="w-16 h-16 rounded-full bg-[#83d4ae] text-white flex items-center justify-center mb-6 shadow-sm hover:scale-110 transition" title="Bỏ qua" type="button">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x w-9 h-9 stroke-[3]"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
 </button>
@@ -323,7 +323,7 @@
 </div>
 </div>
 <!-- Right Card: "Cùng tần số!" (Match Connect State Card with Clapping hands) -->
-<div class="relative z-10 w-64 md:w-72 h-[380px] rounded-3xl bg-brand-500 hover:bg-brand-600 text-white shadow-soft p-6 flex flex-col items-center justify-center text-center transform translate-x-12 md:translate-x-16 hover:translate-x-14 transition duration-300 cursor-pointer select-none group" onclick="swipeAction('right')">
+<div class="relative z-10 w-64 md:w-72 h-[380px] rounded-3xl bg-brand-500 hover:bg-brand-600 text-white shadow-soft p-6 hidden md:flex flex-col items-center justify-center text-center transform md:translate-x-16 hover:translate-x-14 transition duration-300 cursor-pointer select-none group" onclick="swipeAction('right')">
 <div class="relative mb-5 transform group-hover:scale-110 transition duration-300">
 <div class="text-5xl drop-shadow-md animate-bounce">
               🙌
@@ -344,7 +344,7 @@
 </div>
 </div>
 <!-- Right Carousel Arrow -->
-<button aria-label="Ghép thẻ tiếp theo" class="absolute right-2 md:right-6 z-30 w-12 h-12 rounded-full bg-white/95 border border-slate-200/80 shadow-md hover:shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-600 hover:scale-105 transition active:scale-95" onclick="swipeAction('right')" title="Cùng tần số / Ghép ngay" type="button">
+<button aria-label="Ghép thẻ tiếp theo" class="absolute right-1 md:right-6 z-30 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/95 border border-slate-200/80 shadow-md hover:shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-600 hover:scale-105 transition active:scale-95" onclick="swipeAction('right')" title="Cùng tần số / Ghép ngay" type="button">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" aria-hidden="true" class="lucide lucide-chevron-right w-6 h-6"><path d="m9 18 6-6-6-6"></path></svg>
 </button>
 </div>
@@ -355,7 +355,7 @@
 <!-- Bottom Filter Floating Bar (Ảnh 1 bottom section) -->
 <!-- BEGIN: FilterToolBar -->
 <div class="w-full max-w-[880px] px-4 mt-6 mb-2 z-20">
-  <div class="bg-white/95 backdrop-blur-md rounded-full px-8 py-3.5 shadow-soft border border-emerald-100 flex items-center justify-between gap-4 select-none">
+  <div class="bg-white/95 backdrop-blur-md rounded-3xl md:rounded-full px-5 md:px-8 py-4 md:py-3.5 shadow-soft border border-emerald-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4 select-none">
     <!-- Left Item: Chế độ Lọc chủ động -->
     <div class="flex items-center gap-3 shrink-0">
       <div class="w-9 h-9 rounded-full bg-[#c7f2df] flex items-center justify-center text-brand-600 font-bold">
@@ -370,7 +370,7 @@
     </div>
 
     <!-- Divider 1 -->
-    <div class="h-7 w-[1px] bg-slate-200 shrink-0"></div>
+    <div class="hidden md:block h-7 w-[1px] bg-slate-200 shrink-0"></div>
 
     <!-- Middle Item: Chỉ tìm bạn cùng giới tính -->
     <label class="flex items-center gap-3 cursor-pointer select-none shrink-0">
@@ -384,7 +384,7 @@
     </label>
 
     <!-- Divider 2 -->
-    <div class="h-7 w-[1px] bg-slate-200 shrink-0"></div>
+    <div class="hidden md:block h-7 w-[1px] bg-slate-200 shrink-0"></div>
 
     <!-- Right Item: Chỉ hiển thị bạn cùng khoa/viện -->
     <label class="flex items-center gap-3 cursor-pointer select-none shrink-0">
@@ -419,7 +419,7 @@
 <!-- Main Chat Window Layout -->
 <div class="bg-white rounded-2xl shadow-soft border border-slate-200/80 overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[620px]">
 <!-- Sidebar: Active Matches List -->
-<aside class="md:col-span-4 lg:col-span-3 border-r border-slate-100 bg-[#fbfdfc] flex flex-col">
+<aside class="md:col-span-4 lg:col-span-3 border-b md:border-b-0 md:border-r border-slate-100 bg-[#fbfdfc] flex flex-col">
 <div class="p-4 border-b border-slate-100 flex items-center justify-between font-bold text-xs uppercase tracking-wider text-slate-400">
 <span class="">Bạn bè tương hợp</span>
 <span class="text-brand-600 lowercase font-semibold" id="matches-count-label">1 bạn</span>
@@ -446,7 +446,7 @@
 <!-- Main Chat Panel (9 columns) -->
 <div class="md:col-span-8 lg:col-span-9 flex flex-col justify-between bg-white">
 <!-- Chat Top Header -->
-<div class="px-6 py-3.5 border-b border-slate-100 flex items-center justify-between">
+<div class="px-4 sm:px-6 py-3.5 border-b border-slate-100 flex items-center justify-between gap-2">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-full overflow-hidden ring-1 ring-slate-200 shrink-0">
 <img alt="Avatar" class="w-full h-full object-cover" id="chat-header-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfsDAg2Dt0smZMJ8HvqWyp67pXD--YNP0vO5k9Td0CDc7MAAPS-iAqgbHUw1TquhycW5XaGpdCPcZ_gBGlVEnl38kHmfQQ-c4_gpWQpvlEag9d4wEg4j2Nd56KvH6R6wQV8INzZhqoXzplJV1LdLz4NBaFF27NEnryvV7UMqy9ciZSKyKFhZIPBIBgs3nN4TX8eTYjWOaMEqYyc7QKEV8E4wMRCjpYwUICbClBBAxx0mfEWf4beEOM">
@@ -472,7 +472,7 @@
 <span class="">✨</span>
 </div>
 <!-- Chat Conversation Scrollable Body -->
-<div class="p-6 overflow-y-auto space-y-6 flex-1 bg-[#fbfdfc] custom-scrollbar max-h-[500px]" id="chat-scroll-view">
+<div class="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1 bg-[#fbfdfc] custom-scrollbar max-h-[500px]" id="chat-scroll-view">
 <!-- Icebreaker Box (Phá băng) -->
 <!-- BEGIN: IcebreakerCard -->
 <div class="bg-brand-pastelMint rounded-3xl p-5 md:p-6 border border-emerald-200/70 shadow-xs">
@@ -517,15 +517,15 @@
 </div>
 <!-- Quick action pill buttons -->
 <div class="flex flex-wrap items-center gap-3">
-<button class="bg-white hover:bg-emerald-50 text-slate-800 font-semibold text-sm px-6 py-2.5 rounded-full border border-slate-300/80 shadow-2xs hover:border-emerald-400 flex items-center gap-2 transition active:scale-95" onclick="quickSendMessage('Cậu có đi bus chung tuyến không, mình đi cùng nhé! 🚌')" type="button">
+<button class="bg-white hover:bg-emerald-50 text-slate-800 font-semibold text-sm px-6 py-2.5 rounded-full border border-slate-300/80 shadow-2xs hover:border-emerald-400 flex items-center justify-center gap-2 transition active:scale-95 w-full sm:w-auto" onclick="quickSendMessage('Cậu có đi bus chung tuyến không, mình đi cùng nhé! 🚌')" type="button">
 <span class="">🚌</span>
 <span class="">Rủ đi bus</span>
 </button>
-<button class="bg-white hover:bg-emerald-50 text-slate-800 font-semibold text-sm px-6 py-2.5 rounded-full border border-slate-300/80 shadow-2xs hover:border-emerald-400 flex items-center gap-2 transition active:scale-95" onclick="quickSendMessage('Hôm nào mình hẹn lên thư viện tự học nhé! 📖')" type="button">
+<button class="bg-white hover:bg-emerald-50 text-slate-800 font-semibold text-sm px-6 py-2.5 rounded-full border border-slate-300/80 shadow-2xs hover:border-emerald-400 flex items-center justify-center gap-2 transition active:scale-95 w-full sm:w-auto" onclick="quickSendMessage('Hôm nào mình hẹn lên thư viện tự học nhé! 📖')" type="button">
 <span class="">📖</span>
 <span class="">Hẹn thư viện</span>
 </button>
-<button class="bg-white hover:bg-emerald-50 text-slate-800 font-semibold text-sm px-6 py-2.5 rounded-full border border-slate-300/80 shadow-2xs hover:border-emerald-400 flex items-center gap-2 transition active:scale-95" onclick="quickSendMessage('Nhóm mình đang làm bài tập, cậu tham gia thảo luận cùng nhé! 👥')" type="button">
+<button class="bg-white hover:bg-emerald-50 text-slate-800 font-semibold text-sm px-6 py-2.5 rounded-full border border-slate-300/80 shadow-2xs hover:border-emerald-400 flex items-center justify-center gap-2 transition active:scale-95 w-full sm:w-auto" onclick="quickSendMessage('Nhóm mình đang làm bài tập, cậu tham gia thảo luận cùng nhé! 👥')" type="button">
 <span class="">👥</span>
 <span class="">Làm bài nhóm</span>
 </button>
